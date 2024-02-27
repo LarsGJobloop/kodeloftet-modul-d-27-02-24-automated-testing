@@ -1,7 +1,11 @@
 name: "CI"
-# The event this workflow should be executed on
+# When this workflow should be executed
 on:
+  # Type of event
   pull_request:
+    # Only against branches
+    branches:
+      - main
 
 jobs:
   CI:
