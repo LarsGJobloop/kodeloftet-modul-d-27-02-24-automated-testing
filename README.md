@@ -120,21 +120,21 @@ In essence, tailor your testing strategy to reflect the significance and scope o
 
 While focusing on Unit, Integration, and E2E tests is crucial, there are more testing types and strategies that can enhance your application's quality further. These include:
 
-### Accessibility Testing
+- Accessibility Testing
 
-Ensuring your application is accessible to all users. Tools like Axe can automate this process.
+  Ensuring your application is accessible to all users. Tools like Axe can automate this process.
 
-### Performance Testing
+- Performance Testing
 
-Important for optimizing user experience. Lighthouse is a great tool for assessing web performance.
+  Important for optimizing user experience. Lighthouse is a great tool for assessing web performance.
 
-### Visual Regression Testing
+- Visual Regression Testing
 
-Helps catch unintended visual changes. Tools like Percy integrate with CI to automate visual comparisons.
+  Helps catch unintended visual changes. Tools like Percy integrate with CI to automate visual comparisons.
 
-### Mocking and Service Virtualization
+- Mocking and Service Virtualization
 
-For simulating APIs and external services during testing. Mock Service Worker is an excellent tool for front-end developers.
+  For simulating APIs and external services during testing. Mock Service Worker is an excellent tool for front-end developers.
 
 ## Links
 
