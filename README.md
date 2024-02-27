@@ -4,6 +4,20 @@
 
 A short introduction to testing, test automation and Continous Integration.
 
+## Content
+
+- [Types of Tests Explained](#types-of-tests-explained)
+  - [Unit Testing](#unit-testing)
+  - [Integration Testing](#integration-testing)
+  - [End-to-End Testing](#end-to-end-e2e-testing)
+- [Strategies for Effective Testing](#strategies-for-effective-testing)
+  - [Arrange, Act, Assert](#arrange-act-assert-aaa)
+- [Continuous Integration](#continuous-integration-ci)
+- [Essential Resources](#essential-resources)
+- [Conclusion](#conclusion)
+- [Further Reading](#further-reading-advanced-and-specialized-testing)
+- [Links](#links)
+
 ## Types of Tests Explained
 
 Testing is a critical part of software development that ensures your code behaves as expected. Let's dive into the different types of tests you'll encounter:
