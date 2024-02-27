@@ -29,8 +29,12 @@ describe("Button", () => {
 
   it("should apply correct styling for the action variant", () => {
     // Arrange
+    const { container } = render(<Button></Button>);
+    const className = "not correct";
     // Act
     // Assert
+    const result = container.firstChild.classList.contains(className);
+    expect(result).toBe(true);
   });
 
   it("should apply correct styling for the destructive variant", () => {
