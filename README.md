@@ -1,39 +1,126 @@
-# Testing Codelab
+# Automated Testing
 
 ## Overview
 
-A set of task for getting familiar with various types of automated testing of frontend applications.
+A short introduction to testing, test automation and Continous Integration.
 
-## Types of tests
+## Types of Tests Explained
+
+Testing is a critical part of software development that ensures your code behaves as expected. Let's dive into the different types of tests you'll encounter:
 
 ### Unit Testing
 
-The smallest test we are writing. Here we are checking that the return value of functions aligns with the expected values when the functions are called with certain inputs.
+Unit tests are the foundation of a solid test suite, focusing on individual functions or components. These tests validate that your code performs correctly under various conditions, including handling inputs, processing data, and managing errors. By isolating each part of your application, you can quickly identify and fix bugs.
+
+#### Tools:
+
+- [Vitest]
+- [Jest]
 
 ### Integration Testing
 
-More complicated to setup than unit tests. These are testing that component which interacts with each other does so in ways we have decided.
+Integration testing examines how multiple units work together. For example, testing the interaction between a button component and the API it calls upon click ensures they integrate seamlessly. These tests are crucial for catching issues that unit tests might miss, such as problems with data flow or API integration.
 
-### End to End Testing
+#### Tools:
 
-This is where we are testing if the application itself does what we have designed it to do, ie the User Journey we have defined. Examples here would be testing that a users can register, sign in, sign out, aswell as testing that a Todo application can handle adding a new task, marking a task as complete, etc. The difference between this and the former twoes is that End to End testing requires more surrounding infrastucture to pull off. In the instance of a Frontend application this means that to do this type of testin you have to stand up a full (potentially headless) browser to test user interaction in the way a user interacts with the application.
+- [Testing Library React] with [Vitest] (or [Jest]).
 
-### Regression Tests - [link](https://www.geeksforgeeks.org/software-engineering-regression-testing/)
+### End-to-End (E2E) Testing
 
-These are tests written to ensure that once bugs or issues are identied and fixed they stay that way while we continue to make changes to our systems.
+E2E testing simulates real user scenarios to ensure the application performs as designed from start to finish. It involves automating interactions with your application in a browser environment to test critical user flows, such as signing up or completing a transaction.
 
-### Visual Regression Testing - [link](https://www.browserstack.com/guide/visual-regression-testing)
+#### Tools:
 
-These are somewhat similar to regression tests, in the sense that once we have settled on a certain visual look to our application that look stays as is until we explicitly decide to change it.
+- [Cypress]
+- [Playwright]
+- [Selenium]
 
-## Strategies
+### Regression Testing
 
-One of the common ways to go approach testing is a pattern called Arrange Act Assert, or AAA for short.
+Regression tests are your safety net, ensuring that new code changes don't adversely affect existing functionalities. They're essential for maintaining system integrity over time, particularly after bug fixes or feature additions. Continuous integration pipelines often automate these tests to catch issues early.
+
+### Visual Regression Testing
+
+Visual regression testing safeguards your UI's look and feel, automatically detecting unintended visual changes. By comparing screenshots before and after changes, you can ensure your application's visual elements remain consistent.
+
+#### Tools:
+
+- [Percy]
+- [BackstopJS]
+
+## Strategies for Effective Testing
+
+### [Arrange, Act, Assert] (AAA)
+
+The AAA pattern is a clear and structured approach to writing tests:
+
+- **Arrange:** Set up the conditions for your test.
+- **Act:** Execute the function or component you're testing.
+- **Assert:** Verify the outcome matches your expectations.
+
+Here's a simple example to demonstrate the AAA pattern in a unit test:
+
+```javascript
+// Arrange
+const add = (a, b) => a + b;
+
+// Act
+const result = add(2, 3);
+
+// Assert
+expect(result).toBe(5);
+```
+
+### Continuous Integration (CI)
+
+Integrating testing into your CI pipeline ensures tests are automatically run with every commit, helping to catch and fix issues early. Tools like GitHub Actions, GitLab CI/CD, and Jenkins can automate this process, running your test suite on various environments and configurations.
+
+## Essential Resources
+
+- **[Vitest Testing Library](https://vitest.dev/):**
+
+  A modern testing library that offers a seamless testing experience for JavaScript frameworks. [Vitest]
+
+- **[Testing Library for React](https://testing-library.com/):**
+
+  Simplifies testing of React components by focusing on their behavior rather than their implementation. [React Testing Library]
+
+- **[Mock Service Worker](https://mswjs.io/):**
+
+  Allows you to intercept and mock HTTP requests to test your application under different server conditions. [Mock Service Worker](https://mswjs.io/) (MSW).
+
+- **[Playwright](https://playwright.dev/):**
+
+  A powerful tool for automating browser tests, supporting multiple browsers out of the box. [Playwright]
+
+- **[Arrange Act Assert Examples](https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/):**
+
+  For more detailed examples of the AAA pattern in action. [AAA Examples](https://chat.openai.com/share/c906a0d8-c8f4-4d18-b69e-2d3ada5ee9a4)
+
+## Conclusion
+
+Testing is an essential skill for any frontend developer, helping to ensure your applications are robust and user-friendly. Start with unit tests to get comfortable with testing concepts, then gradually expand to integration and E2E tests as you build more complex features. Remember, the goal of testing is not to achieve 100% coverage but to provide confidence in your application's functionality and reliability. Happy testing!
 
 ## Links
 
-- [Vitest Testing Library](https://vitest.dev/)
-- [Testing Library React](https://testing-library.com/docs/react-testing-library/intro/)
-- [Mock Service Worker](https://mswjs.io/)
-- [Playwright](https://playwright.dev/)
-- [Arrange Act Assert Examples](https://chat.openai.com/share/c906a0d8-c8f4-4d18-b69e-2d3ada5ee9a4)
+- [Vitest]
+- [Jest]
+- [Testing Library React]
+- [Cypress]
+- [Playwright]
+- [Mock Service Worker]
+- [Selenium]
+- [Percy]
+- [BackstopJS]
+- [Arrange, Act, Assert]
+
+[Vitest]: https://vitest.dev/
+[Jest]: https://jestjs.io/
+[Testing Library React]: https://testing-library.com/docs/react-testing-library/intro/
+[Cypress]: https://www.cypress.io/
+[Playwright]: https://playwright.dev/
+[Mock Service Worker]: https://mswjs.io/
+[Selenium]: https://www.selenium.dev/
+[Percy]: https://percy.io/
+[BackstopJS]: https://garris.github.io/BackstopJS/
+[Arrange, Act, Assert]: https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/
