@@ -35,19 +35,6 @@ E2E testing simulates real user scenarios to ensure the application performs as 
 - [Playwright]
 - [Selenium]
 
-### Regression Testing
-
-Regression tests are your safety net, ensuring that new code changes don't adversely affect existing functionalities. They're essential for maintaining system integrity over time, particularly after bug fixes or feature additions. Continuous integration pipelines often automate these tests to catch issues early.
-
-### Visual Regression Testing
-
-Visual regression testing safeguards your UI's look and feel, automatically detecting unintended visual changes. By comparing screenshots before and after changes, you can ensure your application's visual elements remain consistent.
-
-#### Tools:
-
-- [Percy]
-- [BackstopJS]
-
 ## Strategies for Effective Testing
 
 ### [Arrange, Act, Assert] (AAA)
