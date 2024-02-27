@@ -1,29 +1,35 @@
-name: "Test"
+name: "CI"
+# The event this workflow should be executed on
 on:
   pull_request:
 
 jobs:
-  test:
+  CI:
+    # The operating system used by the workflow runner
     runs-on: ubuntu-latest
 
+    # Set of permissions required by this workflow
     permissions:
       # Required to checkout the code
       contents: read
       # Required to put a comment into the pull-request
       pull-requests: write
 
+    # The steps to execute
     steps:
+      # First checkout the repository
       - uses: actions/checkout@v4
+      # Then install node on the runner
       - name: "Install Node"
         uses: actions/setup-node@v4
         with:
+          # Specify the required version of node
           node-version: "20.x"
+
+      # Our project has dependencies, install these
       - name: "Install Deps"
         run: npm install
+
+      # Run the tests
       - name: "Test"
-        run: npx vitest --coverage.enabled true
-      - name: "Report Coverage"
-        # Set if: always() to also generate the report if tests are failing
-        # Only works if you set `reportOnFailure: true` in your vite config as specified above
-        if: always()
-        uses: davelosert/vitest-coverage-report-action@v2
+        run: npm run test
