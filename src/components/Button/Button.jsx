@@ -24,7 +24,7 @@ export function Button({
       className={[
         style.button,
         style[`${variant}`],
-        isLoading ? style.isLoading : null,
+        isLoading ? style.loading : null,
       ].join(" ")}
     >
       {isLoading ? "Loading..." : children}

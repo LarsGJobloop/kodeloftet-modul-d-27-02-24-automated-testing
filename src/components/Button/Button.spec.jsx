@@ -1,5 +1,5 @@
-import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { describe, it, expect, vi } from "vitest";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { Button } from "./Button";
 import style from "./Button.module.css";
 
@@ -20,8 +20,6 @@ describe("Button", () => {
     const { container } = render(<Button variant="info"></Button>);
     const className = style.info;
 
-    // Act
-
     // Assert
     const result = container.firstChild.classList.contains(className);
     expect(result).toBe(true);
@@ -29,37 +27,77 @@ describe("Button", () => {
 
   it("should apply correct styling for the action variant", () => {
     // Arrange
-    // Act
+    const { container } = render(<Button variant="action"></Button>);
+    const className = style.action;
+
     // Assert
+    const result = container.firstChild.classList.contains(className);
+    expect(result).toBe(true);
   });
 
   it("should apply correct styling for the destructive variant", () => {
     // Arrange
-    // Act
+    const { container } = render(<Button variant="destructive"></Button>);
+    const className = style.destructive;
+
     // Assert
+    const result = container.firstChild.classList.contains(className);
+    expect(result).toBe(true);
   });
 
   it("should render the loading variant when in the loading state", () => {
     // Arrange
-    // Act
+    const { container } = render(<Button isLoading>Loading Button</Button>);
+    const className = style.loading;
+
     // Assert
+    const result = container.firstChild.classList.contains(className);
+    expect(result).toBe(true);
   });
 
   it("should NOT call the onClick handler when clicked and is disabled", () => {
     // Arrange
+    const onClickMock = vi.fn();
+    const { container } = render(
+      <Button onClick={onClickMock} disabled>
+        Disabled Button
+      </Button>
+    );
+
     // Act
+    fireEvent.click(container.firstChild);
+
     // Assert
+    expect(onClickMock).not.toHaveBeenCalled();
   });
 
   it("should NOT call the onClick handler when clicked and is loading", () => {
     // Arrange
+    const onClickMock = vi.fn();
+    const { container } = render(
+      <Button onClick={onClickMock} isLoading>
+        Loading Button
+      </Button>
+    );
+
     // Act
+    fireEvent.click(container.firstChild);
+
     // Assert
+    expect(onClickMock).not.toHaveBeenCalled();
   });
 
   it("should call the onClick handler when clicked and is not loading or disabled", () => {
     // Arrange
+    const onClickMock = vi.fn();
+    const { container } = render(
+      <Button onClick={onClickMock}>Clickable Button</Button>
+    );
+
     // Act
+    fireEvent.click(container.firstChild);
+
     // Assert
+    expect(onClickMock).toHaveBeenCalled();
   });
 });

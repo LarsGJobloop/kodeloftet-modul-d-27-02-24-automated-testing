@@ -21,7 +21,7 @@
   filter: grayscale(80%);
 }
 
-.isLoading {
+.loading {
   cursor: wait;
   background-color: rgb(209, 209, 209);
 }
