@@ -10,6 +10,6 @@ describe("dataDifference", () => {
 
     const result = dateDifference(startData, endDate);
 
-    expect(result).equal(expectedDifference);
+    expect(result).toEqual(expectedDifference);
   });
 });
