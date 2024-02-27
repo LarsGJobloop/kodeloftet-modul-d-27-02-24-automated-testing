@@ -72,9 +72,9 @@ const result = add(2, 3);
 expect(result).toBe(5);
 ```
 
-### Continuous Integration (CI)
+## Continuous Integration (CI)
 
-Integrating testing into your CI pipeline ensures tests are automatically run with every commit, helping to catch and fix issues early. Tools like GitHub Actions, GitLab CI/CD, and Jenkins can automate this process, running your test suite on various environments and configurations.
+Integrating testing into your CI pipeline ensures tests are automatically run with every commit, helping to catch and fix issues early. Tools like [GitHub Actions], [Circle CI], and [Jenkins] can automate this process, running your test suite on various environments and configurations.
 
 ## Essential Resources
 
@@ -148,6 +148,9 @@ While focusing on Unit, Integration, and E2E tests is crucial, there are more te
 - [Percy]
 - [BackstopJS]
 - [Arrange, Act, Assert]
+- [GitHub Actions]
+- [Circle CI]
+- [Jenkins]
 
 [Vitest]: https://vitest.dev/
 [Jest]: https://jestjs.io/
@@ -159,3 +162,6 @@ While focusing on Unit, Integration, and E2E tests is crucial, there are more te
 [Percy]: https://percy.io/
 [BackstopJS]: https://garris.github.io/BackstopJS/
 [Arrange, Act, Assert]: https://automationpanda.com/2020/07/07/arrange-act-assert-a-pattern-for-writing-good-tests/
+[GitHub Actions]: https://docs.github.com/en/actions
+[Circle CI]: https://circleci.com/
+[Jenkins]: https://www.jenkins.io/
