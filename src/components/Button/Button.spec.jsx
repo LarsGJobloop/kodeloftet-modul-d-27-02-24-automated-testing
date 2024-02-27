@@ -31,7 +31,9 @@ describe("Button", () => {
     // Arrange
     const { container } = render(<Button></Button>);
     const className = "not correct";
+
     // Act
+
     // Assert
     const result = container.firstChild.classList.contains(className);
     expect(result).toBe(true);
