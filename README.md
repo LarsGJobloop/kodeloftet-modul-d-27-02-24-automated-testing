@@ -138,19 +138,24 @@ While focusing on Unit, Integration, and E2E tests is crucial, there are more te
 
 ## Links
 
-- [Vitest]
-- [Jest]
-- [Testing Library React]
-- [Cypress]
-- [Playwright]
-- [Mock Service Worker]
-- [Selenium]
-- [Percy]
-- [BackstopJS]
-- [Arrange, Act, Assert]
-- [GitHub Actions]
-- [Circle CI]
-- [Jenkins]
+- Misc
+  - [Arrange, Act, Assert]
+  - [GitHub Actions]
+- Unit Testing/Integration Testing (Minimal)
+  - [Vitest]
+  - [Testing Library React]
+- Unit Testing/Integration Testing Intermediate
+  - [Mock Service Worker]
+- End-to-End Testing, User & Browser Simulation
+  - [Cypress]
+  - [Playwright]
+  - [Selenium]
+  - [Percy]
+  - [BackstopJS]
+- Alternatives
+  - [Jest]
+  - [Circle CI]
+  - [Jenkins]
 
 [Vitest]: https://vitest.dev/
 [Jest]: https://jestjs.io/
