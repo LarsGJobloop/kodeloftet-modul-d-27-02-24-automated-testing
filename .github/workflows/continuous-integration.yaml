@@ -8,7 +8,8 @@ on:
       - main
 
 jobs:
-  CI:
+  # Run the tests defined in this repository
+  unit-tests:
     # The operating system used by the workflow runner
     runs-on: ubuntu-latest
 
@@ -37,3 +38,11 @@ jobs:
       # Run the tests
       - name: "Test"
         run: npm run test
+
+      # Store coverage report
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v4
+        with:
+          name: code-coverage-report
+          path: coverage/
+          overwrite: true
