@@ -24,6 +24,10 @@ describe("LandingPage", () => {
       expect(result.value).toBe(value);
     });
 
+    // There is only one button that is active
+    // the others are either in a disabled state
+    // or a loading state, so there should only be
+    // a single call to the functions heres
     describe("logs to the console when the", () => {
       afterEach(() => {
         vi.resetAllMocks();
