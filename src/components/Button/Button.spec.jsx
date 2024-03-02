@@ -57,9 +57,9 @@ describe("Button", () => {
 
   it("should NOT call the onClick handler when clicked and is disabled", () => {
     // Arrange
-    const onClickMock = vi.fn();
+    const handleClick = vi.fn();
     const { container } = render(
-      <Button onClick={onClickMock} disabled>
+      <Button onClick={handleClick} disabled>
         Disabled Button
       </Button>
     );
@@ -68,14 +68,14 @@ describe("Button", () => {
     fireEvent.click(container.firstChild);
 
     // Assert
-    expect(onClickMock).not.toHaveBeenCalled();
+    expect(handleClick).not.toHaveBeenCalled();
   });
 
   it("should NOT call the onClick handler when clicked and is loading", () => {
     // Arrange
-    const onClickMock = vi.fn();
+    const handleClick = vi.fn();
     const { container } = render(
-      <Button onClick={onClickMock} isLoading>
+      <Button onClick={handleClick} isLoading>
         Loading Button
       </Button>
     );
@@ -84,20 +84,20 @@ describe("Button", () => {
     fireEvent.click(container.firstChild);
 
     // Assert
-    expect(onClickMock).not.toHaveBeenCalled();
+    expect(handleClick).not.toHaveBeenCalled();
   });
 
   it("should call the onClick handler when clicked and is not loading or disabled", () => {
     // Arrange
-    const onClickMock = vi.fn();
+    const handleClick = vi.fn();
     const { container } = render(
-      <Button onClick={onClickMock}>Clickable Button</Button>
+      <Button onClick={handleClick}>Clickable Button</Button>
     );
 
     // Act
     fireEvent.click(container.firstChild);
 
     // Assert
-    expect(onClickMock).toHaveBeenCalled();
+    expect(handleClick).toHaveBeenCalled();
   });
 });
