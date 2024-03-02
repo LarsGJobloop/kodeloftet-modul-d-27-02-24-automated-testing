@@ -3,7 +3,7 @@ import { NavLink, Outlet } from "react-router-dom";
 export function Layout() {
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="flex justify-between items-center p-md">
+      <header className="flex justify-between items-center p-md bg-primary text-white">
         <a href="/">LogoPlaceholder</a>
 
         <nav>
@@ -38,11 +38,11 @@ export function Layout() {
         </nav>
       </header>
 
-      <div className="grow">
+      <div className="grow bg-white text-black">
         <Outlet />
       </div>
 
-      <footer className="px-md py-lg">
+      <footer className="px-md py-lg bg-primary text-white">
         <p className="text-center">Model D</p>
         <p className="text-center">Jobloop</p>
       </footer>
