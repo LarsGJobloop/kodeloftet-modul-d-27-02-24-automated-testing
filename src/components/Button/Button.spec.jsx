@@ -98,6 +98,6 @@ describe("Button", () => {
     fireEvent.click(container.firstChild);
 
     // Assert
-    expect(handleClick).toHaveBeenCalled();
+    expect(handleClick).toHaveBeenCalledOnce();
   });
 });
