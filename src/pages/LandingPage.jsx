@@ -10,6 +10,18 @@ export function LandingPage() {
     setNote(event.target.value);
   }
 
+  function handleInfo() {
+    console.log("Clicked: info");
+  }
+
+  function handleAction() {
+    console.log("Clicked: action");
+  }
+
+  function handleDestructive() {
+    console.log("Clicked: destructive");
+  }
+
   return (
     <main>
       <section>
@@ -23,60 +35,37 @@ export function LandingPage() {
         <div className="flex flex-col gap-lg">
           <section className="flex justify-center gap-md">
             <h3>Normal</h3>
-            <Button onClick={() => handleClick("info")} variant="info">
+            <Button onClick={handleInfo} variant="info">
               #1
             </Button>
-            <Button onClick={() => handleClick("action")} variant="action">
+            <Button onClick={handleAction} variant="action">
               #2
             </Button>
-            <Button
-              onClick={() => handleClick("destructive")}
-              variant="destructive"
-            >
+            <Button onClick={handleDestructive} variant="destructive">
               #3
             </Button>
           </section>
           <section className="flex justify-center gap-md">
             <h3>Disabled State</h3>
-            <Button onClick={() => handleClick("info")} variant="info" disabled>
+            <Button onClick={handleInfo} variant="info" disabled>
               #1
             </Button>
-            <Button
-              onClick={() => handleClick("action")}
-              variant="action"
-              disabled
-            >
+            <Button onClick={handleAction} variant="action" disabled>
               #2
             </Button>
-            <Button
-              onClick={() => handleClick("destructive")}
-              variant="destructive"
-              disabled
-            >
+            <Button onClick={handleDestructive} variant="destructive" disabled>
               #3
             </Button>
           </section>
           <section className="flex justify-center gap-md">
             <h3>Loading State</h3>
-            <Button
-              onClick={() => handleClick("info")}
-              variant="info"
-              isLoading
-            >
+            <Button onClick={handleInfo} variant="info" isLoading>
               #1
             </Button>
-            <Button
-              onClick={() => handleClick("action")}
-              variant="action"
-              isLoading
-            >
+            <Button onClick={handleAction} variant="action" isLoading>
               #2
             </Button>
-            <Button
-              onClick={() => handleClick("destructive")}
-              variant="destructive"
-              isLoading
-            >
+            <Button onClick={handleDestructive} variant="destructive" isLoading>
               #3
             </Button>
           </section>
