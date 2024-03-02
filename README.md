@@ -63,13 +63,16 @@ Here's a simple example to demonstrate the AAA pattern in a unit test:
 
 ```javascript
 // Arrange
-const add = (a, b) => a + b;
+const handleClick = vi.fn();
+const { container } = render(
+  <Button onClick={handleClick}>Clickable Button</Button>
+);
 
 // Act
-const result = add(2, 3);
+fireEvent.click(container.firstChild);
 
 // Assert
-expect(result).toBe(5);
+expect(handleClick).toHaveBeenCalled();
 ```
 
 ## Continuous Integration (CI)
