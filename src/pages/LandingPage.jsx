@@ -1,12 +1,21 @@
 import { Button } from "../components/Button/Button";
+import { useLocalStorage } from "../hooks/useLocalStorage/useLocalStorage";
 
 export function LandingPage() {
-  function handleClick(message) {
-    console.log("Clicked: ", message);
+  const [note, setNote] = useLocalStorage("note", {
+    initialState: "Hello",
+  });
+
+  function updateNote(event) {
+    setNote(event.target.value);
   }
 
   return (
     <main>
+      <section>
+        <p>Note: {note}</p>
+        <input type="text" onChange={updateNote} />
+      </section>
       <h1 className="text-center underline">Examples</h1>
 
       <section>
