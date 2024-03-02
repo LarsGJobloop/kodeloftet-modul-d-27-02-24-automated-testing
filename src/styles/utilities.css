@@ -1,20 +1,17 @@
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-}
+/* 
+This is the collection of reusable CSS classes
+that we are going to reuse across our project
 
-ul,
-ol {
-  list-style-type: none;
-}
+The should ideally be a single CSS rule,
+contained inside a CSS class
+to keep them simple and highly reusable.
 
-a {
-  color: inherit;
-  text-decoration: inherit;
-  display: inline-block;
-}
-
+Exceptions are things along the lines
+of px which should provide the padding
+along the horizontal axis. Ie. this is
+padding-left AND padding-right.
+Which is fine.
+*/
 .flex {
   display: flex;
 }
