@@ -143,26 +143,31 @@ While focusing on Unit, Integration, and E2E tests is crucial, there are more te
 
 - Misc
   - [Arrange, Act, Assert]
-  - [GitHub Actions]
 - Unit Testing/Integration Testing (Minimal)
-  - [Vitest]
-  - [Testing Library React]
+  - **[Vitest] - Recommended**
+  - **[Testing Library React] - for React Applications**
+  - [Testing Library] - For other frontend frameworks
+  - [Jest] - for JavaScript apps/packages that does not use [Vite]
 - Unit Testing/Integration Testing Intermediate
-  - [Mock Service Worker]
+  - **[Mock Service Worker] - Reccomended**
 - End-to-End Testing, User & Browser Simulation
+  - **[Playwright] - Reccomended**
   - [Cypress]
-  - [Playwright]
   - [Selenium]
-  - [Percy]
-  - [BackstopJS]
-- Alternatives
-  - [Jest]
+- Continous Integration
+  - **[GitHub Actions] - Reccomended**
   - [Circle CI]
   - [Jenkins]
+- Visual Regression Testing
+  - **[BackstopJS] - Reccomended**
+  - [Percy]
+-
 
+[Vite]: https://vitejs.dev/
 [Vitest]: https://vitest.dev/
 [Jest]: https://jestjs.io/
 [Testing Library React]: https://testing-library.com/docs/react-testing-library/intro/
+[Testing Library]: https://testing-library.com/
 [Cypress]: https://www.cypress.io/
 [Playwright]: https://playwright.dev/
 [Mock Service Worker]: https://mswjs.io/
@@ -173,3 +178,4 @@ While focusing on Unit, Integration, and E2E tests is crucial, there are more te
 [GitHub Actions]: https://docs.github.com/en/actions
 [Circle CI]: https://circleci.com/
 [Jenkins]: https://www.jenkins.io/
+[Google Lighthouse]: https://github.com/GoogleChrome/lighthouse
