@@ -63,7 +63,7 @@ Here's a simple example to demonstrate the AAA pattern in a unit test:
 
 ```javascript
 // Arrange
-const handleClick = vi.fn();
+const handleClick = vi.fn(); // a utility type where we can check certain aspects
 const { container } = render(
   <Button onClick={handleClick}>Clickable Button</Button>
 );
@@ -72,7 +72,7 @@ const { container } = render(
 fireEvent.click(container.firstChild);
 
 // Assert
-expect(handleClick).toHaveBeenCalled();
+expect(handleClick).toHaveBeenCalledOnce();
 ```
 
 ## Continuous Integration (CI)
