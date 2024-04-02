@@ -89,6 +89,34 @@ expect(handleClick).toHaveBeenCalledOnce();
 
 Integrating testing into your CI pipeline ensures tests are automatically run with every commit, helping to catch and fix issues early. Tools like [GitHub Actions], [Circle CI], and [Jenkins] can automate this process, running your test suite on various environments and configurations.
 
+To achieve this though, we need to increase some of the complexities when it comes to what is stored on GitHub. Specifically we will have two branches we work with from now, one for the deployed page (production) and another with the pending changes (development). This will ensure we don't include any new changes to the deployed page that breaks existing functionality defined by our test suite.
+
+The resulting workflow might look something like this:
+
+```mermaid
+%%{init: { 'theme': 'base', 'gitGraph': {'mainBranchName': 'production'}} }%%
+gitGraph
+    commit
+    branch featureA
+    checkout featureA
+    commit tag: "add specifications"
+    commit
+    commit
+    commit tag: "make tests pass"
+    checkout production
+    merge featureA id: "v0.1.0"
+    branch featureB
+    checkout featureB
+    commit tag: "add specifications"
+    commit
+    commit
+    commit tag: "make tests pass"
+    checkout production
+    merge featureB id: "v0.2.0"
+```
+
+This means that we are never changing what is in production directly. We are using Pull Requests (GitHub style) / Merge Requests from branches where we are developing new Features and only include new changes that are vetted by our automated systems, and potentially other team members.
+
 ## Essential Resources
 
 - **[Vitest Testing Library](https://vitest.dev/):**
