@@ -6,6 +6,7 @@ A short introduction to testing, test automation and Continous Integration.
 
 ## Content
 
+- [Run this locally](#types-of-tests-explained)
 - [Types of Tests Explained](#types-of-tests-explained)
   - [Unit Testing](#unit-testing)
   - [Integration Testing](#integration-testing)
@@ -17,6 +18,15 @@ A short introduction to testing, test automation and Continous Integration.
 - [Conclusion](#conclusion)
 - [Further Reading](#further-reading-advanced-and-specialized-testing)
 - [Links](#links)
+
+## Run this locally
+
+0. **Prerequisites**
+
+- [NodeJS](https://nodejs.org/) installed
+
+1. Clone this repository `git clone https://github.com/LarsGJobloop/kodeloftet-modul-d-27-02-24-automated-testing`
+2. Run the automated tests `npm run test`
 
 ## Types of Tests Explained
 
