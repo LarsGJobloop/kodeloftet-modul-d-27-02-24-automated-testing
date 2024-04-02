@@ -1,4 +1,4 @@
-import { describe, it, expect, afterEach } from "vitest";
+import { describe, it, expect, afterEach, vi } from "vitest";
 import { render, screen, fireEvent, cleanup } from "@testing-library/react";
 import { useCounterContext } from "./useCounterContext";
 import { CounterContextProvider } from "./CounterContextProvider";
@@ -23,8 +23,15 @@ describe("useCounterContext", () => {
     // Arrange
     const outsideContextProvider = () => render(<TestComponent />);
 
+    // Silence React error output
+    const originalError = console.error;
+    console.error = vi.fn();
+
     // Assert
     expect(() => outsideContextProvider()).toThrowError();
+
+    // Cleanup
+    console.error = originalError;
   });
 
   it("starts with an initial state of 0", () => {
